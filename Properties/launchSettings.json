@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "GreenSwap (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "GreenSwap (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
