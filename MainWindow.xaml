@@ -12,6 +12,7 @@
         <MicaBackdrop />
     </Window.SystemBackdrop>
 
+
     <Grid>
         <!-- Define row heights, Auto for header, * for content -->
         <Grid.RowDefinitions>
@@ -29,7 +30,7 @@
 
         <!-- Main Content Area -->
         <Grid Grid.Row="1">
-            <!-- Your content goes here -->
+            <Frame x:Name="contentFrame" />
         </Grid>
     </Grid>
 </Window>

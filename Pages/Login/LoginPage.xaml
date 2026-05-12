@@ -9,6 +9,97 @@
     mc:Ignorable="d">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
+        <Grid Grid.Row="1">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop  Offset="0"/>
+                    <GradientStop  Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+
+            <!-- Login -->
+            <Border Width="400"
+                    Background="White"
+                    CornerRadius="10"
+                    Padding="30"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    BorderBrush="#DDD"
+                    BorderThickness="1">
+
+                <StackPanel Spacing="20"
+                            HorizontalAlignment="Center">
+
+                    <TextBlock Text="Welkom terug"
+                                FontFamily="Segoe UI Semibold"
+                                FontSize="32"
+                                Foreground="Black"
+                                HorizontalAlignment="Center"/>
+
+                    <TextBlock Text="Log in met uw accountgegevens"
+                                   FontFamily="Segoe UI"
+                                   FontSize="16"
+                                   Foreground="#666"
+                                   HorizontalAlignment="Center"/>
+
+                    <TextBox x:Name="NameEmailTextBox"
+                                 Height="45"
+                                 PlaceholderText="Naam of e-mailadres"
+                                 FontSize="16"
+                                 BorderBrush="#CCC"
+                                 BorderThickness="1"
+                                 Background="#FAFAFA"
+                                 Padding="10"
+                                 CornerRadius="6"/>
+
+                    <PasswordBox x:Name="PasswordTextBox"
+                                     Height="45"
+                                     PlaceholderText="Wachtwoord"
+                                     FontSize="16"
+                                     BorderBrush="#CCC"
+                                     BorderThickness="1"
+                                     Background="#FAFAFA"
+                                     Padding="10"
+                                     CornerRadius="6"
+                                     KeyDown="PasswordBox_KeyDown"/>
+
+                    <Button x:Name="InlogButton"
+                                Content="INLOGGEN"
+                                Click="InlogButton_Click"
+                                Height="50"
+                                FontSize="18"
+                                FontWeight="Bold"
+                                Background="#FDD716"
+                                Foreground="Black"
+                                CornerRadius="6"
+                                BorderThickness="0"
+                                HorizontalAlignment="Stretch"/>
+
+                    <Button x:Name="DevInlogButton"
+                                Content="DEV-INLOGGEN"
+                                Click="DevInlogButton_Click"
+                                Height="50"
+                                FontSize="18"
+                                FontWeight="Bold"
+                                Background="#FDD716"
+                                Foreground="Black"
+                                CornerRadius="6"
+                                BorderThickness="0"
+                                HorizontalAlignment="Stretch"/>
+
+                    <TextBlock x:Name="ErrorMessage"
+                                   Foreground="Red"
+                                   FontWeight="Bold"
+                                   FontSize="14"
+                                   TextAlignment="Center"
+                                   TextWrapping="Wrap"/>
+                </StackPanel>
+            </Border>
+        </Grid>
     </Grid>
 </Page>
