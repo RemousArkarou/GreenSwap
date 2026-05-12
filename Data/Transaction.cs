@@ -12,10 +12,8 @@ namespace GreenSwap.Models
         [ForeignKey("Plant")]
         public int PlantId { get; set; }
 
-        [ForeignKey("Buyer")]
         public int BuyerId { get; set; }
 
-        [ForeignKey("Seller")]
         public int SellerId { get; set; }
 
         [Column(TypeName = "decimal(10,2)")]
@@ -29,8 +27,10 @@ namespace GreenSwap.Models
         // Navigation properties
         public Plant Plant { get; set; }
 
+        [InverseProperty("Purchases")]
         public User Buyer { get; set; }
 
+        [InverseProperty("Sales")]
         public User Seller { get; set; }
     }
 }

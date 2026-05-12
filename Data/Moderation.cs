@@ -7,7 +7,7 @@ namespace GreenSwap.Models
     public class Moderation
     {
         [Key]
-        public int ModerationId { get; set; }
+        public int Id { get; set; }
 
         [ForeignKey("Moderator")]
         public int ModeratorId { get; set; }

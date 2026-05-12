@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <Window
     x:Class="GreenSwap.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -14,6 +13,23 @@
     </Window.SystemBackdrop>
 
     <Grid>
-        
+        <!-- Define row heights, Auto for header, * for content -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Background="#FF333333" Padding="10">
+            <TextBlock Text="GreenSwap" Foreground="White" FontSize="24" VerticalAlignment="Center"/>
+            <Button Content="Home" Foreground="White" Margin="10,0" Background="Transparent" BorderBrush="Transparent"/>
+            <Button Content="About" Foreground="White" Margin="10,0" Background="Transparent" BorderBrush="Transparent"/>
+            <Button Content="Contact" Foreground="White" Margin="10,0" Background="Transparent" BorderBrush="Transparent"/>
+        </StackPanel>
+
+        <!-- Main Content Area -->
+        <Grid Grid.Row="1">
+            <!-- Your content goes here -->
+        </Grid>
     </Grid>
 </Window>

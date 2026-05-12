@@ -17,9 +17,8 @@ namespace GreenSwap.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseMySql(
-                ConfigurationManager.ConnectionStrings["GreenSwapDatabase"].ConnectionString,
-                ServerVersion.Parse("8.0.30")
-            );
+               "server=localhost;user=root;password=;database=csd_GreenSwap",
+               ServerVersion.Parse("8.0.30"));
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
