@@ -20,7 +20,7 @@
         </Grid.RowDefinitions>
 
         <!-- Header -->
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Background="#FF333333" Padding="10">
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Background="LimeGreen" Padding="10">
             <TextBlock Text="GreenSwap" Foreground="White" FontSize="24" VerticalAlignment="Center"/>
             <Button Content="Home" Foreground="White" Margin="10,0" Background="Transparent" BorderBrush="Transparent"/>
             <Button Content="About" Foreground="White" Margin="10,0" Background="Transparent" BorderBrush="Transparent"/>
