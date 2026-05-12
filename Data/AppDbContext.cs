@@ -32,7 +32,7 @@ namespace GreenSwap.Data
 
                 new User
                 {
-                    UserId = 1,
+                    Id = 1,
                     Name = "Admin",
                     Email = "admin@greenswap.nl",
                     Password = BCrypt.Net.BCrypt.HashPassword("admin123"),
@@ -43,7 +43,7 @@ namespace GreenSwap.Data
 
                 new User
                 {
-                    UserId = 2,
+                    Id = 2,
                     Name = "Lars",
                     Email = "lars@greenswap.nl",
                     Password = BCrypt.Net.BCrypt.HashPassword("test123"),
@@ -54,7 +54,7 @@ namespace GreenSwap.Data
 
                 new User
                 {
-                    UserId = 3,
+                    Id = 3,
                     Name = "Emma",
                     Email = "emma@greenswap.nl",
                     Password = BCrypt.Net.BCrypt.HashPassword("emma123"),
@@ -70,7 +70,7 @@ namespace GreenSwap.Data
 
                 new Plant
                 {
-                    PlantId = 1,
+                    Id = 1,
                     UserId = 2,
                     Name = "Monstera Deliciosa",
                     Description = "Grote groene kamerplant",
@@ -84,7 +84,7 @@ namespace GreenSwap.Data
 
                 new Plant
                 {
-                    PlantId = 2,
+                    Id = 2,
                     UserId = 2,
                     Name = "Cactus",
                     Description = "Heeft weinig water nodig",
@@ -98,7 +98,7 @@ namespace GreenSwap.Data
 
                 new Plant
                 {
-                    PlantId = 3,
+                    Id = 3,
                     UserId = 1,
                     Name = "Orchidee",
                     Description = "Bloeiende plant",
@@ -117,7 +117,7 @@ namespace GreenSwap.Data
 
                 new Review
                 {
-                    ReviewId = 1,
+                    Id = 1,
                     PlantId = 1,
                     BuyerId = 1,
                     Rating = 5,
@@ -127,7 +127,7 @@ namespace GreenSwap.Data
 
                 new Review
                 {
-                    ReviewId = 2,
+                    Id = 2,
                     PlantId = 2,
                     BuyerId = 3,
                     Rating = 4,
@@ -142,7 +142,7 @@ namespace GreenSwap.Data
 
                 new Transaction
                 {
-                    TransactionId = 1,
+                    Id = 1,
                     PlantId = 1,
                     BuyerId = 1,
                     SellerId = 2,
@@ -153,7 +153,7 @@ namespace GreenSwap.Data
 
                 new Transaction
                 {
-                    TransactionId = 2,
+                    Id = 2,
                     PlantId = 3,
                     BuyerId = 2,
                     SellerId = 1,
@@ -169,7 +169,7 @@ namespace GreenSwap.Data
 
                 new Moderation
                 {
-                    ModerationId = 1,
+                    Id = 1,
                     ModeratorId = 3,
                     PlantId = 1,
                     CheckType = "Goedgekeurd",
@@ -179,7 +179,7 @@ namespace GreenSwap.Data
 
                 new Moderation
                 {
-                    ModerationId = 2,
+                    Id = 2,
                     ModeratorId = 3,
                     PlantId = 2,
                     CheckType = "Controle",
