@@ -1,4 +1,5 @@
 using GreenSwap.Data;
+using GreenSwap.Pages.Plant;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -7,6 +8,7 @@ using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using System;
+using GreenSwap.Pages.Plant;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -33,7 +35,15 @@ namespace GreenSwap
             //db.Database.EnsureDeleted();
             //db.Database.EnsureCreated();
 
+            using (var db = new AppDbContext())
+            {
+                db.Database.EnsureDeleted();
+                db.Database.EnsureCreated();
+            }
+            
+
             contentFrame.Navigate(typeof(LoginPage));
         }
+
     }
 }

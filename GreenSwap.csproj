@@ -19,6 +19,9 @@
 
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
+	<ItemGroup>
+	  <None Remove="Pages\Plant\OverviewPage.xaml" />
+	</ItemGroup>
 
   <ItemGroup>
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -50,6 +53,7 @@
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="10.0.7" />
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Pages\Plant\OverviewPage.xaml">
     <Folder Include="Auth\" />
     <Folder Include="Pages\Beheer\" />
   </ItemGroup>
