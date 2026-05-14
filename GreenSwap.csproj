@@ -52,16 +52,17 @@
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="9.0.0" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="10.0.7" />
   </ItemGroup>
-  <ItemGroup>
-    <Page Update="Pages\Plant\OverviewPage.xaml">
-    <Folder Include="Auth\" />
-    <Folder Include="Pages\Beheer\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="Pages\Login\LoginPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
+	<ItemGroup>
+		
+		<Page Update="Pages\Plant\OverviewPage.xaml" />
+		<Folder Include="Auth\" />
+		<Folder Include="Pages\Beheer\" />
+	</ItemGroup>
+	<ItemGroup>
+		<Page Update="Pages\Login\LoginPage.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</Page>
+	</ItemGroup>
 
   <!--
     Defining the "HasPackageAndPublishMenuAddedByProject" property here allows the Solution
