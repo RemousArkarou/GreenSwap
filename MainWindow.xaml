@@ -12,6 +12,7 @@
         <MicaBackdrop />
     </Window.SystemBackdrop>
 
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -23,7 +24,9 @@
             <TextBlock Text="GreenSwap" Foreground="White" FontSize="24"/>
         </StackPanel>
 
-        <!-- FRAME (BELANGRIJK) -->
-        <Frame x:Name="MainFrame" Grid.Row="1"/>
+        <!-- Main Content Area -->
+        <Grid Grid.Row="1">
+            <Frame x:Name="contentFrame" />
+        </Grid>
     </Grid>
 </Window>

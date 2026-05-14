@@ -15,6 +15,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using GreenSwap.Pages.Login;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -29,14 +30,19 @@ namespace GreenSwap
         public MainWindow()
         {
             InitializeComponent();
+            //using var db = new AppDbContext();
+
+            //db.Database.EnsureDeleted();
+            //db.Database.EnsureCreated();
 
             using (var db = new AppDbContext())
             {
                 db.Database.EnsureDeleted();
                 db.Database.EnsureCreated();
             }
-            MainFrame.Navigate(typeof(GreenSwap.Pages.Plant.OverviewPage));
+            
 
+            contentFrame.Navigate(typeof(LoginPage));
         }
 
     }
