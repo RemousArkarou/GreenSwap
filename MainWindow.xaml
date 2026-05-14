@@ -13,7 +13,11 @@
     </Window.SystemBackdrop>
 
 
+
     <Grid>
+
+
+        <!-- Define row heights, Auto for header, * for content -->
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -28,5 +32,6 @@
         <Grid Grid.Row="1">
             <Frame x:Name="contentFrame" />
         </Grid>
+        <Frame x:Name="MainFrame" />
     </Grid>
 </Window>

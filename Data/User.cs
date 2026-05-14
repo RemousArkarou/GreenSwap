@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GreenSwap.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -24,7 +25,9 @@ namespace GreenSwap.Models
 
         [Required]
         [MaxLength(50)]
-        public string Role { get; set; }
+        public Role Role { get; set; }
+        public int RoleId { get; set; }
+
 
         [Column(TypeName = "decimal(10,2)")]
         public decimal GreenCredit { get; set; }

@@ -30,19 +30,17 @@ namespace GreenSwap
         public MainWindow()
         {
             InitializeComponent();
-            //using var db = new AppDbContext();
-
-            //db.Database.EnsureDeleted();
-            //db.Database.EnsureCreated();
+            
 
             using (var db = new AppDbContext())
             {
                 db.Database.EnsureDeleted();
                 db.Database.EnsureCreated();
             }
+
             
 
-            contentFrame.Navigate(typeof(LoginPage));
+            MainFrame.Navigate(typeof(Pages.User.UserOverviewPage));
         }
 
     }
