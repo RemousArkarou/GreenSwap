@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace GreenSwap.Models
+namespace GreenSwap.Data.Models
 {
     public class User
     {
@@ -30,9 +30,10 @@ namespace GreenSwap.Models
         public decimal GreenCredit { get; set; }
 
         public DateTime RegistrationDate { get; set; }
+        public static User? LoggedInUser { get; set; }
 
         // Navigation properties
-        public ICollection<Plant> Plants { get; set; }
+        public ICollection<Plant> Plants { get; set; } = null;
         public ICollection<Transaction> Purchases { get; set; }
         public ICollection<Transaction> Sales { get; set; }
         public ICollection<Review> Reviews { get; set; }
