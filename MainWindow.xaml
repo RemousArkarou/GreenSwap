@@ -13,23 +13,17 @@
     </Window.SystemBackdrop>
 
     <Grid>
-        <!-- Define row heights, Auto for header, * for content -->
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <!-- Header -->
+        <!-- HEADER -->
         <StackPanel Grid.Row="0" Orientation="Horizontal" Background="LimeGreen" Padding="10">
-            <TextBlock Text="GreenSwap" Foreground="White" FontSize="24" VerticalAlignment="Center"/>
-            <Button Content="Home" Foreground="White" Margin="10,0" Background="Transparent" BorderBrush="Transparent"/>
-            <Button Content="About" Foreground="White" Margin="10,0" Background="Transparent" BorderBrush="Transparent"/>
-            <Button Content="Contact" Foreground="White" Margin="10,0" Background="Transparent" BorderBrush="Transparent"/>
+            <TextBlock Text="GreenSwap" Foreground="White" FontSize="24"/>
         </StackPanel>
 
-        <!-- Main Content Area -->
-        <Grid Grid.Row="1">
-            <!-- Your content goes here -->
-        </Grid>
+        <!-- FRAME (BELANGRIJK) -->
+        <Frame x:Name="MainFrame" Grid.Row="1"/>
     </Grid>
 </Window>
