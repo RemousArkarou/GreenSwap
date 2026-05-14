@@ -71,7 +71,7 @@
                     </StackPanel>
                 </Border>
 
-                <!-- Items List: Gebaseerd op AppDbContext Seeders -->
+                <!-- Items List: Based on AppDbContext Seeders -->
                 <ListView x:Name="ItemsListView" SelectionMode="None">
                     <ListView.ItemContainerStyle>
                         <Style TargetType="ListViewItem">

@@ -9,6 +9,7 @@ namespace GreenSwap.Data
     internal class AppDbContext : DbContext
     {
         public DbSet<User> Users { get; set; }
+        public DbSet<Role> Roles { get; set; }
         public DbSet<Plant> Plants { get; set; }
         public DbSet<Review> Reviews { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
@@ -30,6 +31,36 @@ namespace GreenSwap.Data
         {
             base.OnModelCreating(modelBuilder);
 
+
+            modelBuilder.Entity<Role>().HasData(
+
+
+            new Role
+                {
+                    Id = 1,
+                    Name = "Buyer"
+                },
+
+                new Role
+                {
+                    Id = 2,
+                    Name = "Grower"
+                },
+
+                new Role
+                {
+                    Id = 3,
+                    Name = "Admin"
+                },
+
+
+                 new Role
+                 {
+                     Id = 4,
+                     Name = "All Roles"
+                 });
+
+
             // ---------------------- USER SEED ----------------------
 
             modelBuilder.Entity<User>().HasData(
@@ -40,7 +71,7 @@ namespace GreenSwap.Data
                     Name = "Admin",
                     Email = "admin@greenswap.nl",
                     Password = BCrypt.Net.BCrypt.HashPassword("admin123"),
-                    Role = "Admin",
+                    RoleId = 3,
                     GreenCredit = 500,
                     RegistrationDate = new DateTime(2025, 1, 1)
                 },
@@ -51,7 +82,7 @@ namespace GreenSwap.Data
                     Name = "Lars",
                     Email = "lars@greenswap.nl",
                     Password = BCrypt.Net.BCrypt.HashPassword("test123"),
-                    Role = "User",
+                    RoleId = 1,
                     GreenCredit = 150,
                     RegistrationDate = new DateTime(2025, 1, 5)
                 },
@@ -62,7 +93,7 @@ namespace GreenSwap.Data
                     Name = "Emma",
                     Email = "emma@greenswap.nl",
                     Password = BCrypt.Net.BCrypt.HashPassword("emma123"),
-                    Role = "Moderator",
+                    RoleId = 2,
                     GreenCredit = 300,
                     RegistrationDate = new DateTime(2025, 1, 10)
                 }
