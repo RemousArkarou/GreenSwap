@@ -27,7 +27,7 @@ namespace GreenSwap.Pages.User
     public sealed partial class UserOverviewPage : Page
     {
 
-        private List<GreenSwap.Models.User> AllUsers = new();
+        private List<GreenSwap.Data.Models.User> AllUsers = new();
         private List<Role> RoleList = new();
         public UserOverviewPage()
         {

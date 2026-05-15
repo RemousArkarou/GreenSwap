@@ -12,7 +12,6 @@
         <ScrollViewer>
             <StackPanel Padding="20" Spacing="25">
 
-                <!-- Back Button -->
                 <Button
                     Content="← Back"
                     HorizontalAlignment="Left"
@@ -22,56 +21,31 @@
                     CornerRadius="4"
                     Click="BackButton_Click"/>
 
-                <!-- Filter Section: Dark Card Style -->
                 <Border
                     Padding="20"
                     CornerRadius="12"
                     Background="#252525" 
                     HorizontalAlignment="Left"
-                    Width="300"
+                    Width="320"
                     BorderBrush="#333333"
                     BorderThickness="1">
 
                     <StackPanel Spacing="15">
-                        <TextBlock
-                            Text="Filters"
-                            FontSize="22"
-                            FontWeight="Bold"
-                            Foreground="#98FF98"/>
+                        <TextBlock Text="Filters" FontSize="22" FontWeight="Bold" Foreground="#98FF98"/>
 
-                        <TextBox
-                            x:Name="NameFilterBox"
-                            Header="Name"
-                            PlaceholderText="Search plants..."
-                            Background="#333333"
-                            Foreground="White"
-                            BorderThickness="0,0,0,1"/>
+                        <TextBox x:Name="NameFilterBox" Header="Name" PlaceholderText="Search plants..." Background="#333333" Foreground="White"/>
 
-                        <ComboBox
-                            x:Name="CategoryFilterBox"
-                            Header="Category"
-                            HorizontalAlignment="Stretch"
-                            Background="#333333"
-                            Foreground="White">
+                        <ComboBox x:Name="CategoryFilterBox" Header="Plant Type" HorizontalAlignment="Stretch" Background="#333333" Foreground="White">
                             <ComboBoxItem Content="All" IsSelected="True"/>
                             <ComboBoxItem Content="Kamerplant"/>
                             <ComboBoxItem Content="Vetplant"/>
                             <ComboBoxItem Content="Bloemplant"/>
                         </ComboBox>
 
-                        <Button
-                            Content="Apply Filters"
-                            HorizontalAlignment="Stretch"
-                            Background="#98FF98"
-                            Foreground="Black"
-                            FontWeight="Bold"
-                            Height="40"
-                            CornerRadius="6"
-                            Click="FilterButton_Click"/>
+                        <Button Content="Apply Filters" HorizontalAlignment="Stretch" Background="#98FF98" Foreground="Black" FontWeight="Bold" Height="40" CornerRadius="6" Click="FilterButton_Click"/>
                     </StackPanel>
                 </Border>
 
-                <!-- Items List: Based on AppDbContext Seeders -->
                 <ListView x:Name="ItemsListView" SelectionMode="None">
                     <ListView.ItemContainerStyle>
                         <Style TargetType="ListViewItem">
@@ -83,47 +57,41 @@
 
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <!-- Mint Kleur: #98FF98 | Tekst: Zwart geforceerd -->
-                            <Border 
-                                Background="#98FF98" 
-                                CornerRadius="12" 
-                                Padding="15" 
-                                RequestedTheme="Light">
-
+                            <Border Background="#98FF98" CornerRadius="12" Padding="15" RequestedTheme="Light">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="110"/>
                                         <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="160"/>
+                                        <ColumnDefinition Width="180"/>
                                     </Grid.ColumnDefinitions>
 
-                                    <!-- Image Binding naar 'Image' property -->
-                                    <Image Source="{Binding Image}" Width="80" Height="80" Stretch="UniformToFill"/>
+                                    <Border CornerRadius="8">
+                                        <Image Source="{Binding Image}" Width="100" Height="100" Stretch="UniformToFill"/>
+                                    </Border>
 
-                                    <StackPanel Grid.Column="1" Margin="20,0,0,0" VerticalAlignment="Center">
+                                    <StackPanel Grid.Column="1" Margin="20,0,20,0" VerticalAlignment="Center" Spacing="4">
                                         <TextBlock Text="{Binding Name}" FontWeight="Bold" FontSize="20" Foreground="Black"/>
 
-                                        <StackPanel Orientation="Horizontal" Spacing="10">
-                                            <TextBlock Text="{Binding PlantType}" Foreground="#444444" FontSize="14"/>
-                                            <TextBlock Text="•" Foreground="#444444"/>
+                                        <StackPanel Orientation="Horizontal" Spacing="8">
+                                            <TextBlock Text="{Binding PlantType}" Foreground="#2E7D32" FontWeight="SemiBold" FontSize="14"/>
+                                            <TextBlock Text="|" Foreground="#444444"/>
                                             <TextBlock Text="{Binding Rarity}" Foreground="#444444" FontSize="14" FontStyle="Italic"/>
                                         </StackPanel>
 
-                                        <TextBlock Text="{Binding Status}" FontSize="12" Foreground="#666666"/>
+                                        <TextBlock Text="{Binding Description}" FontSize="13" Foreground="#333333" TextWrapping="Wrap" MaxLines="2"/>
+                                        <TextBlock Text="{Binding SoilType}" FontSize="12" Foreground="#555555" FontWeight="Light"/>
+
+                                        <TextBlock Text="{Binding Status}" FontSize="12" FontWeight="Bold" Foreground="#1A1A1A" Margin="0,5,0,0"/>
                                     </StackPanel>
 
                                     <StackPanel Grid.Column="2" VerticalAlignment="Center" Spacing="8">
-                                        <!-- Prijs weergave -->
-                                        <TextBlock Text="{Binding CreditPrice}" 
-                                                   HorizontalAlignment="Right" 
-                                                   FontWeight="Bold" 
-                                                   Foreground="Black" 
-                                                   FontSize="16"
-                                                   Margin="0,0,5,0"/>
-                                        <TextBlock Text="Credits" HorizontalAlignment="Right" FontSize="10" Foreground="Black" Margin="0,-8,5,5"/>
+                                        <StackPanel HorizontalAlignment="Right" Margin="0,0,5,5">
+                                            <TextBlock Text="{Binding CreditPrice}" FontSize="24" FontWeight="Black" Foreground="Black" HorizontalAlignment="Right"/>
+                                            <TextBlock Text="GREEN CREDITS" FontSize="10" FontWeight="Bold" Foreground="#2E7D32" HorizontalAlignment="Right" Margin="0,-5,0,0"/>
+                                        </StackPanel>
 
                                         <Button Content="Details" HorizontalAlignment="Stretch" Background="White" Foreground="Black" CornerRadius="4" Click="DetailsButton_Click"/>
-                                        <Button Content="Trade" HorizontalAlignment="Stretch" Background="#1A1A1A" Foreground="White" CornerRadius="4" Click="TradeButton_Click"/>
+                                        <Button Content="Nu Ruilen" HorizontalAlignment="Stretch" Background="#1A1A1A" Foreground="White" FontWeight="Bold" CornerRadius="4" Click="TradeButton_Click"/>
                                     </StackPanel>
                                 </Grid>
                             </Border>
