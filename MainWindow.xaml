@@ -24,14 +24,38 @@
         </Grid.RowDefinitions>
 
         <!-- HEADER -->
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Background="LimeGreen" Padding="10">
-            <TextBlock Text="GreenSwap" Foreground="White" FontSize="24"/>
-        </StackPanel>
+        <Grid Grid.Row="0"
+      Background="LimeGreen"
+      Padding="10">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Static app title -->
+            <TextBlock Text="GreenSwap"
+               Grid.Column="0"
+               Foreground="White"
+               FontSize="24"
+               FontWeight="Bold"
+               Margin="0,0,20,0"/>
+
+
+            <!-- Dynamic page title -->
+            <TextBlock x:Name="PageTitleText"
+               Grid.Column="1"
+               Foreground="White"
+               FontSize="20"
+               FontWeight="SemiBold"
+               VerticalAlignment="Center"
+                       HorizontalAlignment="Center"/>
+        </Grid>
 
         <!-- Main Content Area -->
         <Grid Grid.Row="1">
-            <Frame x:Name="contentFrame" />
+            <Frame x:Name="contentFrame" Background="#1FB91C" />
         </Grid>
-        <Frame x:Name="MainFrame" />
     </Grid>
 </Window>

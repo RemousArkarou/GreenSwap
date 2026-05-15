@@ -38,9 +38,21 @@ namespace GreenSwap
                 db.Database.EnsureCreated();
             }
 
-            
 
-            MainFrame.Navigate(typeof(Pages.User.UserOverviewPage));
+
+            contentFrame.Navigated += ContentFrame_Navigated;
+
+            contentFrame.Navigate(typeof(Pages.User.UserOverviewPage));
+
+            
+        }
+
+        private void ContentFrame_Navigated(object sender, NavigationEventArgs e)
+        {
+            if (e.Content is Pages.User.UserOverviewPage userPage)
+            {
+                PageTitleText.Text = userPage.PageTitle;
+            }
         }
 
     }

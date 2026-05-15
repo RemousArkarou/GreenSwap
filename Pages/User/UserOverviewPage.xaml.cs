@@ -26,6 +26,7 @@ namespace GreenSwap.Pages.User
     /// </summary>
     public sealed partial class UserOverviewPage : Page
     {
+        public string PageTitle => "User Overview";
 
         private List<GreenSwap.Models.User> AllUsers = new();
         private List<Role> RoleList = new();
@@ -55,8 +56,6 @@ namespace GreenSwap.Pages.User
 
         private void FilterUsers()
         {
-
-            var db = new AppDbContext();
             var filteredUsers = AllUsers.AsQueryable();
 
             // Name search
