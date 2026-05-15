@@ -16,6 +16,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using GreenSwap.Pages.Login;
+using GreenSwap.Pages.User;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -42,7 +43,7 @@ namespace GreenSwap
 
             contentFrame.Navigated += ContentFrame_Navigated;
 
-            contentFrame.Navigate(typeof(Pages.User.UserOverviewPage));
+            contentFrame.Navigate(typeof(UserOverviewPage));
 
             
         }
