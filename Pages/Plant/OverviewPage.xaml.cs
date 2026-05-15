@@ -1,7 +1,6 @@
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using GreenSwap.Data;
-using GreenSwap.Models; // Zorg dat je Model namespace klopt
 using System.Linq;
 
 namespace GreenSwap.Pages.Plant
@@ -38,7 +37,7 @@ namespace GreenSwap.Pages.Plant
         {
             // Haal het specifieke plant object op uit de geklikte knop
             var button = sender as Button;
-            var selectedPlant = button?.DataContext as GreenSwap.Models.Plant;
+            var selectedPlant = button?.DataContext as Data.Models.Plant;
 
             if (selectedPlant != null)
             {
@@ -50,7 +49,7 @@ namespace GreenSwap.Pages.Plant
         private void TradeButton_Click(object sender, RoutedEventArgs e)
         {
             var button = sender as Button;
-            var selectedPlant = button?.DataContext as GreenSwap.Models.Plant;
+            var selectedPlant = button?.DataContext as Data.Models.Plant;
 
             // Hier kun je je trade logica starten
         }

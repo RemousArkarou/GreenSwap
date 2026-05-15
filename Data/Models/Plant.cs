@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace GreenSwap.Models
+namespace GreenSwap.Data.Models
 {
     public class Plant
     {

@@ -8,88 +8,84 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="#1A1A1A">
-        <ScrollViewer>
+    <Grid Background="#1a1a2e">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0"
+                Background="#16213e"
+                Padding="20,14"
+                BorderBrush="#0f3460"
+                BorderThickness="0,0,0,2">
+            <TextBlock Text="Plant Overview"
+                       FontSize="18"
+                       FontWeight="Bold"
+                       Foreground="Aqua"
+                       CharacterSpacing="100"/>
+        </Border>
+
+        <ScrollViewer Grid.Row="1">
             <StackPanel Padding="20" Spacing="25">
 
-                <!-- Back Button -->
-                <Button
-                    Content="← Back"
-                    HorizontalAlignment="Left"
-                    Background="#333333"
-                    Foreground="White"
-                    Padding="12,5"
-                    CornerRadius="4"
-                    Click="BackButton_Click"/>
-
-                <!-- Filter Section: Dark Card Style -->
-                <Border
-                    Padding="20"
-                    CornerRadius="12"
-                    Background="#252525" 
-                    HorizontalAlignment="Left"
-                    Width="300"
-                    BorderBrush="#333333"
-                    BorderThickness="1">
+                <Border Padding="20"
+                        CornerRadius="12"
+                        Background="#16213e" 
+                        HorizontalAlignment="Left"
+                        Width="320"
+                        BorderBrush="#0f3460"
+                        BorderThickness="1">
 
                     <StackPanel Spacing="15">
-                        <TextBlock
-                            Text="Filters"
-                            FontSize="22"
-                            FontWeight="Bold"
-                            Foreground="#98FF98"/>
+                        <TextBlock Text="Filters" FontSize="20" FontWeight="Bold" Foreground="Aqua"/>
 
-                        <TextBox
-                            x:Name="NameFilterBox"
-                            Header="Name"
-                            PlaceholderText="Search plants..."
-                            Background="#333333"
-                            Foreground="White"
-                            BorderThickness="0,0,0,1"/>
+                        <TextBox x:Name="NameFilterBox" 
+                                 Header="Plant Name" 
+                                 PlaceholderText="Search plants..." 
+                                 Background="#0f3460" 
+                                 Foreground="White"
+                                 BorderThickness="0,0,0,1"/>
 
-                        <ComboBox
-                            x:Name="CategoryFilterBox"
-                            Header="Category"
-                            HorizontalAlignment="Stretch"
-                            Background="#333333"
-                            Foreground="White">
+                        <ComboBox x:Name="CategoryFilterBox" 
+                                  Header="Type" 
+                                  HorizontalAlignment="Stretch" 
+                                  Background="#0f3460" 
+                                  Foreground="White">
                             <ComboBoxItem Content="All" IsSelected="True"/>
                             <ComboBoxItem Content="Kamerplant"/>
                             <ComboBoxItem Content="Vetplant"/>
                             <ComboBoxItem Content="Bloemplant"/>
                         </ComboBox>
 
-                        <Button
-                            Content="Apply Filters"
-                            HorizontalAlignment="Stretch"
-                            Background="#98FF98"
-                            Foreground="Black"
-                            FontWeight="Bold"
-                            Height="40"
-                            CornerRadius="6"
-                            Click="FilterButton_Click"/>
+                        <Button Content="Apply Filters" 
+                                HorizontalAlignment="Stretch" 
+                                Background="Aqua" 
+                                Foreground="#16213e" 
+                                FontWeight="Bold" 
+                                Height="36" 
+                                CornerRadius="6" 
+                                Click="FilterButton_Click"/>
                     </StackPanel>
                 </Border>
 
-                <!-- Items List: Based on AppDbContext Seeders -->
                 <ListView x:Name="ItemsListView" SelectionMode="None">
                     <ListView.ItemContainerStyle>
                         <Style TargetType="ListViewItem">
                             <Setter Property="HorizontalContentAlignment" Value="Stretch" />
                             <Setter Property="Padding" Value="0"/>
-                            <Setter Property="Margin" Value="0,0,0,15"/>
+                            <Setter Property="Margin" Value="0,0,0,12"/>
                         </Style>
                     </ListView.ItemContainerStyle>
 
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <!-- Mint Kleur: #98FF98 | Tekst: Zwart geforceerd -->
-                            <Border 
-                                Background="#98FF98" 
-                                CornerRadius="12" 
-                                Padding="15" 
-                                RequestedTheme="Light">
-
+                            <Border Background="#16213e" 
+                                    CornerRadius="8" 
+                                    Padding="15" 
+                                    BorderBrush="#0f3460"
+                                    BorderThickness="1">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="100"/>
@@ -97,41 +93,63 @@
                                         <ColumnDefinition Width="160"/>
                                     </Grid.ColumnDefinitions>
 
-                                    <!-- Image Binding naar 'Image' property -->
-                                    <Image Source="{Binding Image}" Width="80" Height="80" Stretch="UniformToFill"/>
+                                    <Border CornerRadius="6">
+                                        <Image Source="{Binding Image}" Width="80" Height="80" Stretch="UniformToFill"/>
+                                    </Border>
 
-                                    <StackPanel Grid.Column="1" Margin="20,0,0,0" VerticalAlignment="Center">
-                                        <TextBlock Text="{Binding Name}" FontWeight="Bold" FontSize="20" Foreground="Black"/>
+                                    <StackPanel Grid.Column="1" Margin="15,0" VerticalAlignment="Center" Spacing="4">
+                                        <TextBlock Text="{Binding Name}" Foreground="#e0e0e0" FontSize="18" FontWeight="SemiBold"/>
 
-                                        <StackPanel Orientation="Horizontal" Spacing="10">
-                                            <TextBlock Text="{Binding PlantType}" Foreground="#444444" FontSize="14"/>
-                                            <TextBlock Text="•" Foreground="#444444"/>
-                                            <TextBlock Text="{Binding Rarity}" Foreground="#444444" FontSize="14" FontStyle="Italic"/>
+                                        <StackPanel Orientation="Horizontal" Spacing="8">
+                                            <TextBlock Text="{Binding PlantType}" Foreground="Aqua" FontSize="13" Opacity="0.8"/>
+                                            <TextBlock Text="|" Foreground="#333"/>
+                                            <TextBlock Text="{Binding Rarity}" Foreground="#888" FontSize="13" FontStyle="Italic"/>
                                         </StackPanel>
 
-                                        <TextBlock Text="{Binding Status}" FontSize="12" Foreground="#666666"/>
+                                        <TextBlock Text="{Binding Description}" FontSize="12" Foreground="#888" TextWrapping="Wrap" MaxLines="1"/>
+                                        <TextBlock Text="{Binding SoilType}" FontSize="11" Foreground="#555" />
                                     </StackPanel>
 
                                     <StackPanel Grid.Column="2" VerticalAlignment="Center" Spacing="8">
-                                        <!-- Prijs weergave -->
-                                        <TextBlock Text="{Binding CreditPrice}" 
-                                                   HorizontalAlignment="Right" 
-                                                   FontWeight="Bold" 
-                                                   Foreground="Black" 
-                                                   FontSize="16"
-                                                   Margin="0,0,5,0"/>
-                                        <TextBlock Text="Credits" HorizontalAlignment="Right" FontSize="10" Foreground="Black" Margin="0,-8,5,5"/>
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="5">
+                                            <TextBlock Text="$" Foreground="Gold" FontSize="12" VerticalAlignment="Center"/>
+                                            <TextBlock Text="{Binding CreditPrice}" Foreground="Gold" FontSize="18" FontWeight="Bold"/>
+                                        </StackPanel>
 
-                                        <Button Content="Details" HorizontalAlignment="Stretch" Background="White" Foreground="Black" CornerRadius="4" Click="DetailsButton_Click"/>
-                                        <Button Content="Trade" HorizontalAlignment="Stretch" Background="#1A1A1A" Foreground="White" CornerRadius="4" Click="TradeButton_Click"/>
+                                        <Button Content="Details" 
+                                                HorizontalAlignment="Stretch" 
+                                                Background="#0f3460" 
+                                                Foreground="White" 
+                                                FontSize="12"
+                                                Height="32"
+                                                CornerRadius="4" 
+                                                Click="DetailsButton_Click"/>
+                                        <Button Content="Trade" 
+                                                HorizontalAlignment="Stretch" 
+                                                Background="Aqua" 
+                                                Foreground="#16213e" 
+                                                FontWeight="Bold"
+                                                Height="32"
+                                                CornerRadius="4" 
+                                                Click="TradeButton_Click"/>
                                     </StackPanel>
                                 </Grid>
                             </Border>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-
             </StackPanel>
         </ScrollViewer>
+
+        <Border Grid.Row="2" Padding="20" Background="#16213e" BorderBrush="#0f3460" BorderThickness="0,2,0,0">
+            <Button x:Name="BackButton" 
+                    Content="Back to Menu" 
+                    Click="BackButton_Click"
+                    HorizontalAlignment="Center"
+                    Background="#e94560" 
+                    Foreground="White"
+                    CornerRadius="4"
+                    Padding="30,8"/>
+        </Border>
     </Grid>
 </Page>

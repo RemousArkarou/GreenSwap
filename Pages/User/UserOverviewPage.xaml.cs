@@ -1,4 +1,5 @@
 using GreenSwap.Data;
+using GreenSwap.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
@@ -28,7 +29,7 @@ namespace GreenSwap.Pages.User
     {
         public string PageTitle => "User Overview";
 
-        private List<GreenSwap.Models.User> AllUsers = new();
+        private List<GreenSwap.Data.Models.User> AllUsers = new();
         private List<Role> RoleList = new();
         public UserOverviewPage()
         {

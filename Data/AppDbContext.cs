@@ -1,4 +1,4 @@
-﻿using GreenSwap.Models;
+﻿using GreenSwap.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
