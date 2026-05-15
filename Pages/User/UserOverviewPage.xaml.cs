@@ -1,4 +1,5 @@
 using GreenSwap.Data;
+using GreenSwap.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GreenSwap.Data
+namespace GreenSwap.Data.Models
 {
     public class Role
     {

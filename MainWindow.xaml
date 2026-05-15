@@ -32,6 +32,5 @@
         <Grid Grid.Row="1">
             <Frame x:Name="contentFrame" />
         </Grid>
-        <Frame x:Name="MainFrame" />
     </Grid>
 </Window>

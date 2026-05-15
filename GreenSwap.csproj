@@ -20,6 +20,7 @@
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
 	<ItemGroup>
+	  <None Remove="Pages\Login\RegisterPage.xaml" />
 	  <None Remove="Pages\Plant\OverviewPage.xaml" />
 	</ItemGroup>
 
@@ -57,6 +58,11 @@
 		<Page Update="Pages\Plant\OverviewPage.xaml" />
 		<Folder Include="Auth\" />
 		<Folder Include="Pages\Beheer\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Page Update="Pages\Login\RegisterPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </Page>
 	</ItemGroup>
 	<ItemGroup>
 		<Page Update="Pages\Login\LoginPage.xaml">

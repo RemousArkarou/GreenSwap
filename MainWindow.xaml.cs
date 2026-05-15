@@ -40,7 +40,7 @@ namespace GreenSwap
 
             
 
-            MainFrame.Navigate(typeof(Pages.User.UserOverviewPage));
+            contentFrame.Navigate(typeof(Pages.Login.LoginPage));
         }
 
     }

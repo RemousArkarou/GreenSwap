@@ -24,7 +24,7 @@
 
             <!-- Login -->
             <Border Width="400"
-                    Background="White"
+                    Background="#252525"
                     CornerRadius="10"
                     Padding="30"
                     HorizontalAlignment="Center"
@@ -38,13 +38,13 @@
                     <TextBlock Text="Welkom terug"
                                 FontFamily="Segoe UI Semibold"
                                 FontSize="32"
-                                Foreground="Black"
+                                Foreground="#98FF98"
                                 HorizontalAlignment="Center"/>
 
                     <TextBlock Text="Log in met uw accountgegevens"
                                    FontFamily="Segoe UI"
                                    FontSize="16"
-                                   Foreground="#666"
+                                   Foreground="WhiteSmoke"
                                    HorizontalAlignment="Center"/>
 
                     <TextBox x:Name="NameEmailTextBox"
@@ -53,7 +53,7 @@
                                  FontSize="16"
                                  BorderBrush="#CCC"
                                  BorderThickness="1"
-                                 Background="#FAFAFA"
+                                 Background="#333333"
                                  Padding="10"
                                  CornerRadius="6"/>
 
@@ -63,7 +63,7 @@
                                      FontSize="16"
                                      BorderBrush="#CCC"
                                      BorderThickness="1"
-                                     Background="#FAFAFA"
+                                     Background="#333333"
                                      Padding="10"
                                      CornerRadius="6"
                                      KeyDown="PasswordBox_KeyDown"/>
@@ -74,11 +74,24 @@
                                 Height="50"
                                 FontSize="18"
                                 FontWeight="Bold"
-                                Background="#FDD716"
+                                Background="#98FF98"
                                 Foreground="Black"
                                 CornerRadius="6"
                                 BorderThickness="0"
                                 HorizontalAlignment="Stretch"/>
+                    
+                    <Button x:Name="RegisterButton"
+                                Content="Registreer"
+                                Click="RegisterButton_Click"
+                                Height="50"
+                                FontSize="18"
+                                FontWeight="Bold"
+                                Background="#98FF98"
+                                Foreground="Black"
+                                CornerRadius="6"
+                                BorderThickness="0"
+                                HorizontalAlignment="Stretch"/>
+
 
                     <Button x:Name="DevInlogButton"
                                 Content="DEV-INLOGGEN"
@@ -86,7 +99,7 @@
                                 Height="50"
                                 FontSize="18"
                                 FontWeight="Bold"
-                                Background="#FDD716"
+                                Background="#98FF98"
                                 Foreground="Black"
                                 CornerRadius="6"
                                 BorderThickness="0"
